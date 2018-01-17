@@ -109,7 +109,7 @@ class Plugin {
 
                 filterStatement.Properties.LogGroupName = `/aws/lambda/${functionObj.name}`;
 
-                let filterStatementName = functionName + 'SumoLogicSubscriptionFilter';
+                let filterStatementName = getNormalizedFunctionName(functionName) + 'SumoLogicSubscriptionFilter';
 
                 filterStatement.DependsOn.push(logGroupLogicalId);
 

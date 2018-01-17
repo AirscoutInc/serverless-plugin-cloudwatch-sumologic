@@ -11,8 +11,8 @@ class Plugin {
         this.provider = this.serverless.getProvider('aws');
 
         this.hooks = {
-            'before:deploy:createDeploymentArtifacts': this.beforeDeployCreateDeploymentArtifacts.bind(this),
-            'deploy:compileEvents': this.deployCompileEvents.bind(this),
+            'package:createDeploymentArtifacts': this.beforeDeployCreateDeploymentArtifacts.bind(this),
+            'package:compileEvents': this.deployCompileEvents.bind(this),
             'after:deploy:deploy': this.afterDeployDeploy.bind(this)
         };
     }
